@@ -3,7 +3,7 @@ input = sys.stdin.readline
 
 N, K = map(int, input().split())
 tmp = list(map(int, input().split()))
-A = [0]*K
+A = []
 rlt = [0]*N
 
 if N % 2: l = N // 2 + 1
@@ -13,8 +13,7 @@ if max(tmp) > l:
     print(-1)
 else:
     for k in range(K):
-        A[k] = [tmp[k], k+1]        # [ 갯수, 색깔번호 ]
-
+        A.append([tmp[k], k+1])     # [ 갯수, 색깔번호 ]
     A.sort()
     rlt[0] = A[-1][1]
     A[-1][0] -= 1
